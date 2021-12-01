@@ -7,6 +7,10 @@
         path = ./unstable-utils;
         description = "Nix Flake template using the 'nixpkgs-unstable' branch and 'flake-utils'";
       };
+      aoc-day-haskell = {
+        path = ./haskell-advent-of-code;
+        description = "Haskell Flake for a single Advent of Code";
+      };
     };
   };
 }
