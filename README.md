@@ -14,14 +14,10 @@ up-to-date packages. Great as a base for shell scripts.
   - `moreutils`
   - `jq`
 
-## `haskell-advent-of-code`
+## `haskell`
 
-Comes with a proper Haskell project setup and a whole bunch of tools that
-should make Advent of Code a bit easier. The resulting executable accepts a
-positional parameter of `p1` or `p2` to determine which day to run. Pipe the
-input to the executable: `$ echo "foo" | cabal v2-run pkg:haskell-advent-of-code -- p1`
-
-Use this flake for each day and customize the dependencies.
+A simple Haskell starter template which uses `cabal2nix` to generate a Nix
+environment for your project. The cabal file defines default language extensions!
 
 - `nixpkgs-unstable`
 - `flake-utils`

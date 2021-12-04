@@ -3,7 +3,7 @@
 , unordered-containers
 }:
 mkDerivation {
-  pname = "haskell-advent-of-code";
+  pname = "haskell-starter";
   version = "0.1.0.0";
   src = ./.;
   isLibrary = false;

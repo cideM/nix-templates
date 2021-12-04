@@ -1,5 +1,5 @@
 cabal-version:      2.4
-name:               haskell-advent-of-code
+name:               haskell-starter
 version:            0.1.0.0
 
 -- A short (one-line) description of the package.
@@ -41,7 +41,7 @@ common shared-props
     ScopedTypeVariables
     TupleSections
 
-executable haskell-advent-of-code
+executable haskell-starter
   import:           shared-props
   main-is:          Main.hs
 
@@ -51,19 +51,7 @@ executable haskell-advent-of-code
   -- LANGUAGE extensions used by modules in this package.
   -- other-extensions:
   build-depends:
-    , array
     , base                  ^>=4.14.3.0
-    , containers
-    , extra
-    , fgl
-    , flow
-    , mtl
-    , optparse-generic
-    , pretty-simple
-    , streamly
-    , text
-    , trifecta
-    , unordered-containers
 
   hs-source-dirs:   app
   default-language: Haskell2010

@@ -1,5 +1,5 @@
 {
-  description = "Nix Flake template using the 'nixpkgs-unstable' branch and 'flake-utils'";
+  description = "Simple Haskell Flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
