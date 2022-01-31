@@ -35,3 +35,25 @@ environment for your project. The cabal file defines default language extensions
     - `cabal-fmt`
     - `fast-tags`
     - `hoogle`
+
+## `go`
+
+Dev shell with Go tools. Building is not handled by Nix, instead it's expected
+that you just `go build main.go`
+
+- `nixpkgs-unstable`
+- `flake-utils`
+- Dev shell with:
+  - Shell utilities
+    - `coreutils`
+    - `moreutils`
+    - `jq`
+  - Go stuff
+    - `go`
+    - `gopls`
+    - `gotools`
+    - `graphviz`
+    - `golangci-lint`
+    - `go-outline`
+    - `gopkgs`
+
