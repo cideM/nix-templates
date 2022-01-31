@@ -11,6 +11,10 @@
         path = ./haskell-advent-of-code;
         description = "Haskell Flake for a single Advent of Code";
       };
+      go = {
+        path = ./go;
+        description = "Nix Flake with the Go tools where building is not handled by Nix";
+      };
     };
   };
 }
