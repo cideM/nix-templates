@@ -1,0 +1,15 @@
+.idea/
+.vscode
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+tags
+.lvimrc
+.envrc
+.DS_Store
+tags
+result
