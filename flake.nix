@@ -7,9 +7,9 @@
         path = ./unstable-utils;
         description = "Nix Flake template using the 'nixpkgs-unstable' branch and 'flake-utils'";
       };
-      aoc-day-haskell = {
-        path = ./haskell-advent-of-code;
-        description = "Haskell Flake for a single Advent of Code";
+      haskell = {
+        path = ./haskell;
+        description = "Simple Nix Flake for a Haskell project";
       };
       go = {
         path = ./go;
