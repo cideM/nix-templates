@@ -6,31 +6,48 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+  }:
+    flake-utils.lib.eachDefaultSystem (
+      system: let
         pkgs = import nixpkgs {
           inherit system;
         };
 
         project = pkgs.haskellPackages.callPackage ./project.nix {};
-      in
-      {
+
+        # https://github.com/NixOS/nixpkgs/issues/209397
+        # https://github.com/NixOS/nixpkgs/issues/140774#issuecomment-1371565125
+        workaround140774 = haskellPackage:
+          with pkgs.haskell.lib;
+            overrideCabal haskellPackage (drv: {
+              enableSeparateBinOutput = false;
+            });
+      in rec {
         devShell = pkgs.mkShell {
-          inputsFrom = [ project.env ];
-          buildInputs = with pkgs; with haskellPackages; [
+          inputsFrom = [project.env];
+
+          buildInputs = with pkgs;
+          with haskellPackages; [
             coreutils
             moreutils
             jq
 
-            ghcid
-            ormolu
-            hlint
             cabal2nix
-            cabal-install
-            cabal-fmt
-            fast-tags
-            hoogle
+
+            (haskell.packages.ghc92.ghcWithPackages (hpkgs:
+              with hpkgs; [
+                cabal-install
+                cabal-fmt
+                hlint
+                hoogle
+                fast-tags
+                (workaround140774 ormolu)
+                (workaround140774 ghcid)
+              ]))
           ];
         };
       }
