@@ -24,7 +24,6 @@
             go
             gopls
             gotools
-            graphviz
             golangci-lint
             go-outline
             gopkgs
