@@ -15,15 +15,15 @@
       templates = {
         unstable-utils = {
           path = ./unstable-utils;
-          description = "Nix Flake template using the 'nixpkgs-unstable' branch and 'flake-utils'";
+          description = "A great basis for shell scripts. Uses the 'nixpkgs-unstable' branch and 'flake-utils'";
         };
         haskell = {
           path = ./haskell;
-          description = "Simple Nix Flake for a Haskell project";
+          description = "A Haskell app using the Nixpkgs Haskell infrastructure and GHC 9.2.6";
         };
         go = {
           path = ./go;
-          description = "Nix Flake with the Go tools where building is not handled by Nix";
+          description = "A Nix shell for Go development. Does not use buildGoPackage/buildGoModule";
         };
       };
     }
@@ -36,6 +36,7 @@
         devShell = pkgs.mkShell {
           buildInputs = with pkgs; [
             alejandra
+            haskellPackages.cabal-fmt
           ];
         };
       }
