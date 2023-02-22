@@ -25,6 +25,14 @@
           path = ./go;
           description = "A Nix shell for Go development. Does not use buildGoPackage/buildGoModule";
         };
+        node-npm = {
+          path = ./node-npm;
+          description = "The latest NodeJS and NPM from Nixpkgs";
+        };
+        node-yarn = {
+          path = ./node-yarn;
+          description = "The latest NodeJS and Yarn from Nixpkgs";
+        };
       };
     }
     // flake-utils.lib.eachDefaultSystem (
