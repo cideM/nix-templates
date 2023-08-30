@@ -18,7 +18,6 @@
         };
 
         project = pkgs.haskellPackages.callPackage ./project.nix {};
-
       in rec {
         devShell = pkgs.mkShell {
           inputsFrom = [project.env];
@@ -30,17 +29,13 @@
             jq
 
             cabal2nix
-
-            (haskell.packages.ghc96.ghcWithPackages (hpkgs:
-              with hpkgs; [
-                cabal-install
-                cabal-fmt
-                hlint
-                hoogle
-                fast-tags
-                ormolu
-                ghcid
-              ]))
+            cabal-install
+            cabal-fmt
+            hlint
+            hoogle
+            fast-tags
+            ormolu
+            ghcid
           ];
         };
       }
