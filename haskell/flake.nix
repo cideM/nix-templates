@@ -31,7 +31,7 @@
 
             cabal2nix
 
-            (haskell.packages.ghc92.ghcWithPackages (hpkgs:
+            (haskell.packages.ghc96.ghcWithPackages (hpkgs:
               with hpkgs; [
                 cabal-install
                 cabal-fmt
