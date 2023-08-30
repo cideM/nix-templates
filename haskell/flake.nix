@@ -19,13 +19,6 @@
 
         project = pkgs.haskellPackages.callPackage ./project.nix {};
 
-        # https://github.com/NixOS/nixpkgs/issues/209397
-        # https://github.com/NixOS/nixpkgs/issues/140774#issuecomment-1371565125
-        workaround140774 = haskellPackage:
-          with pkgs.haskell.lib;
-            overrideCabal haskellPackage (drv: {
-              enableSeparateBinOutput = false;
-            });
       in rec {
         devShell = pkgs.mkShell {
           inputsFrom = [project.env];
@@ -45,8 +38,8 @@
                 hlint
                 hoogle
                 fast-tags
-                (workaround140774 ormolu)
-                (workaround140774 ghcid)
+                ormolu
+                ghcid
               ]))
           ];
         };
