@@ -13,3 +13,4 @@ tags
 .DS_Store
 tags
 result
+.direnv
