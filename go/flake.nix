@@ -20,6 +20,7 @@
             coreutils
             moreutils
             jq
+            alejandra
 
             go
             gopls

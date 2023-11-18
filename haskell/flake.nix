@@ -24,6 +24,7 @@
 
           buildInputs = with pkgs;
           with haskellPackages; [
+            alejandra
             coreutils
             moreutils
             jq
