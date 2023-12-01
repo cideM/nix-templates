@@ -34,7 +34,7 @@
           description = "The latest NodeJS and Yarn from Nixpkgs";
         };
         lua = {
-          path = ./node-yarn;
+          path = ./lua;
           description = "Lua";
         };
       };
