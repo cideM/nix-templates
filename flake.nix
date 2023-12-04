@@ -37,6 +37,10 @@
           path = ./lua;
           description = "Lua";
         };
+        aoc-lua = {
+          path = ./aoc-lua;
+          description = "Advent of Code in Lua";
+        };
       };
     }
     // flake-utils.lib.eachDefaultSystem (
