@@ -36,7 +36,7 @@
             hoogle
             fast-tags
             ormolu
-            ghcid
+            ghciwatch
           ];
         };
       }
