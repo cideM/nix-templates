@@ -1,3 +1,9 @@
+# You probably want to add
+#
+# ./node_modules/typescript/bin
+# ./node_modules/.bin
+#
+# to your PATH somehow, for example through nix-direnv
 {
   description = "The latest NodeJS and NPM from Nixpkgs";
 
@@ -6,15 +12,17 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+  }:
+    flake-utils.lib.eachDefaultSystem (
+      system: let
         pkgs = import nixpkgs {
           inherit system;
         };
-
-      in
-      {
+      in {
         devShell = pkgs.mkShell {
           buildInputs = with pkgs; [
             alejandra
@@ -25,6 +33,7 @@
             # You can leverage Typescript even in a pure Javascript project.
             pkgs.nodePackages.typescript-language-server
             pkgs.nodejs
+            pkgs.corepack
           ];
         };
       }
