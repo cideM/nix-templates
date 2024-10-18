@@ -1,6 +1,5 @@
 # You probably want to add
 #
-# ./node_modules/typescript/bin
 # ./node_modules/.bin
 #
 # to your PATH somehow, for example through nix-direnv

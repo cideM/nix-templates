@@ -1,3 +1,8 @@
+# You probably want to add
+#
+# ./node_modules/.bin
+#
+# to your PATH somehow, for example through nix-direnv
 {
   description = "The latest NodeJS and Yarn from Nixpkgs";
 
@@ -27,9 +32,7 @@
             # You can leverage Typescript even in a pure Javascript project.
             pkgs.nodePackages.typescript-language-server
             pkgs.nodejs-slim
-            (pkgs.yarn.override {
-              nodejs = pkgs.nodejs-slim;
-            })
+            pkgs.corepack
           ];
         };
       }
