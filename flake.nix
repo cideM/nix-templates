@@ -41,6 +41,10 @@
           path = ./aoc-lua;
           description = "Advent of Code in Lua";
         };
+        deno = {
+          path = ./deno;
+          description = "Super basic Deno flake";
+        };
       };
     }
     // flake-utils.lib.eachDefaultSystem (
