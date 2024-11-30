@@ -41,6 +41,10 @@
           path = ./aoc-lua;
           description = "Advent of Code in Lua";
         };
+        aoc-janet = {
+          path = ./aoc-janet;
+          description = "Advent of Code in Janet";
+        };
         deno = {
           path = ./deno;
           description = "Super basic Deno flake";
