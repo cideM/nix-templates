@@ -21,6 +21,10 @@
           path = ./haskell;
           description = "A Haskell app using the Nixpkgs Haskell infrastructure and GHC 9.2.6";
         };
+        haskell-aoc = {
+          path = ./haskell-aoc;
+          description = "Just the most recent GHC and some adjacent tools";
+        };
         go = {
           path = ./go;
           description = "A Nix shell for Go development. Does not use buildGoPackage/buildGoModule";
