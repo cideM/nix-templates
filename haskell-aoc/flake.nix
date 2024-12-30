@@ -27,7 +27,7 @@
             hlint
             haskellPackages.hoogle
             haskellPackages.fast-tags
-            haskell.packages.ghc912
+            (haskell.packages.ghc912.ghcWithPackages (pkgs: []))
             ormolu
             ghciwatch
           ];
