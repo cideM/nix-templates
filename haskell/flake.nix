@@ -1,5 +1,5 @@
 {
-  description = "Simple Haskell Flake";
+  description = "Just GHC and some adjacent tools";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -16,25 +16,18 @@
         pkgs = import nixpkgs {
           inherit system;
         };
-
-        project = pkgs.haskellPackages.callPackage ./project.nix {};
       in rec {
         devShell = pkgs.mkShell {
-          inputsFrom = [project.env];
-
-          buildInputs = with pkgs;
-          with haskellPackages; [
+          buildInputs = with pkgs; [
             alejandra
             coreutils
             moreutils
             jq
 
-            cabal2nix
-            cabal-install
-            cabal-fmt
             hlint
-            hoogle
-            fast-tags
+            haskellPackages.hoogle
+            haskellPackages.fast-tags
+            (haskell.packages.ghc912.ghcWithPackages (pkgs: []))
             ormolu
             ghciwatch
           ];
